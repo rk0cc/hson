@@ -1,6 +1,6 @@
 Documentation:
     ✔ Provide API info @done(21-10-19 17:58)
-    ☐ Comment for each Golang files
+    ✔ Comment for each Golang files @done(21-10-19 19:11)
 
 Compile:
     ✔ Built Windows .dll file @done(21-10-19 18:00)
