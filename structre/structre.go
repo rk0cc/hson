@@ -26,6 +26,9 @@ func (hj *HashJSON) UpdateContext(ctx string) error {
 	if !hj.hashMatched() {
 		return errors.New("update hashing failed")
 	}
+	if nonJsonErr := hj.ContextIsJSON(); nonJsonErr != nil {
+		return nonJsonErr
+	}
 	return nil
 }
 
