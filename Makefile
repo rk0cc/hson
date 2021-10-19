@@ -1,22 +1,22 @@
-# Go build command
 GO=go build
-# Current OS, default mark as unknown
 cos=unknown
-# Extension of dynamic library
+short_cos=unknown
 binext=.
-# Entry point of the program
 entry=main.go
 
 ifeq ($(OS),Windows_NT)
 	cos:=windows
+	short_cos:=win
 	binext:=.dll
 else
 	unix_uname:=$(shell uname -s)
 	ifeq ($(unix_uname),Darwin)
 		cos:=darwin
+		short_cos:=macos
 		binext:=.dylib
 	else
 		cos:=linux
+		short_cos:=linux
 		binext:=.so
 	endif
 endif
@@ -29,14 +29,10 @@ else
 	endif
 endif
 
-ifndef GOOS
-	export GOOS=$(cos)
-endif
-
 .PHONY:
 	build
 
 all: build
 
 build:
-	$(GO) -buildmode c-shared -o hashjson$(binext) $(entry)
+	$(GO) -buildmode c-shared -o hson_$(short_cos)$(binext) $(entry)
