@@ -8,5 +8,5 @@ Compile:
     ☐ Built Linxu .so file
 
 Testing:
-    ☐ Provide testing file
-    ☐ Create GitHub Action
+    ✔ Provide testing file @done(21-10-19 19:02)
+    ✔ Create GitHub Action @done(21-10-19 19:02)
