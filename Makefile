@@ -36,11 +36,14 @@ endif
 .PHONY:
 	build
 
-all:
-	build clean
+all: build clean
 
 build:
 	$(GO) -buildmode c-shared -o hashjson$(binext) $(entry)
 
 clean:
-	rm -rf ./file/ ./structre/ ./*.go ./go.mod ./go.sum
+	rm -rf file/
+	rm -rf structre/
+	rm *.go 
+	rm go.mod 
+	rm go.sum
