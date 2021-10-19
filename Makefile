@@ -35,4 +35,5 @@ endif
 all: build
 
 build:
-	$(GO) -buildmode c-shared -o hson_$(short_cos)$(binext) $(entry)
+	arch=$(shell go env GOARCH)
+	$(GO) -buildmode c-shared -o hson_$(short_cos)_$(arch)$(binext) $(entry)
