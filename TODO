@@ -1,0 +1,8 @@
+Documentation:
+    ✔ Provide API info @done(21-10-19 17:58)
+    ☐ Comment for each Golang files
+
+Compile:
+    ✔ Built Windows .dll file @done(21-10-19 18:00)
+    ☐ Built macOS .dylib file
+    ☐ Built Linxu .so file
