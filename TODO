@@ -6,3 +6,7 @@ Compile:
     ✔ Built Windows .dll file @done(21-10-19 18:00)
     ☐ Built macOS .dylib file
     ☐ Built Linxu .so file
+
+Testing:
+    ☐ Provide testing file
+    ☐ Create GitHub Action
