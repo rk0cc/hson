@@ -20,14 +20,14 @@ func readHSON(path *C.char) *C.char {
 }
 
 //export writeHSON
-func writeHSON(context, path *C.char) bool {
+func writeHSON(context, path *C.char) C.int {
 	hj := &structre.HashJSON{}
 	ucErr := hj.UpdateContext(C.GoString(context))
 	if ucErr != nil {
-		return false
+		return 1
 	}
 	if wdErr := file.WriteData(C.GoString(path), hj); wdErr != nil {
-		return false
+		return 2
 	}
-	return true
+	return 0
 }
