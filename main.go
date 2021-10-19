@@ -14,7 +14,7 @@ func main() {
 func readHSON(path *C.char) *C.char {
 	hsonCtx, rErr := file.ReadData(C.GoString(path))
 	if rErr != nil {
-		return nil
+		return C.CString("")
 	}
 	return C.CString(hsonCtx.Context)
 }
