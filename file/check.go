@@ -1,7 +1,7 @@
 package file
 
 import (
-	"errors"
+	"fmt"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -18,5 +18,5 @@ func isHsonExt(path string) error {
 			return nil
 		}
 	}
-	return errors.New("the extension must be either .hson or .hashjson insteaded of " + fext)
+	return fmt.Errorf("the extension must be either .hson or .hashjson insteaded of %s", fext)
 }
