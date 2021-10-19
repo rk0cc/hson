@@ -36,7 +36,7 @@ endif
 .PHONY:
 	build
 
-all: build clean
+all: build
 
 build:
 	$(GO) -buildmode c-shared -o hashjson$(binext) $(entry)
