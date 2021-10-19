@@ -12,10 +12,15 @@ Structre for storing HashJSON
 type HashJSON struct {
 	// Base64 encoded hashing
 	Hashing string `json:"hashing"`
-	// Context string
+	// Context string, DO NOT ASSIGN NEW CONTEXT HERE
 	Context string `json:"context"`
 }
 
+/*
+Actual method for updating context here
+
+It included assign context data and calculating hash in this method
+*/
 func (hj *HashJSON) UpdateContext(ctx string) error {
 	hj.Context = ctx
 	hash, ghErr := generateHashing(ctx)
@@ -32,6 +37,11 @@ func (hj *HashJSON) UpdateContext(ctx string) error {
 	return nil
 }
 
+/*
+Get HashJSON from byte
+
+Caution: If the byte is compressed, please decompress at first
+*/
 func ParseFromByte(data []byte) (HashJSON, error) {
 	var phj HashJSON
 	jsonUMErr := json.Unmarshal(data, &phj)
@@ -45,6 +55,9 @@ func ParseFromByte(data []byte) (HashJSON, error) {
 	return phj, nil
 }
 
+/*
+Convert HashJSON to byte without compress
+*/
 func (hj *HashJSON) ToByte() ([]byte, error) {
 	return json.Marshal(hj)
 }

@@ -7,6 +7,11 @@ import (
 	"strings"
 )
 
+/*
+Check is a valid HSON file extension
+
+It must be either .hson or .hashjson
+*/
 func isHsonExt(path string) error {
 	validExt := []string{"hson", "hashjson"}
 	fext := filepath.Ext(path)

@@ -8,6 +8,11 @@ import (
 	"github.com/rk0cc/hson/structre"
 )
 
+/*
+Write data to HSON file
+
+It uses GZip compressed file context with level 5 compression
+*/
 func WriteData(path string, hj *structre.HashJSON) error {
 	if hj.Context == "" || hj.Hashing == "" {
 		return errors.New("hashjson has empty field and abort incoming operation")
