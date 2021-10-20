@@ -3,7 +3,7 @@ cos=unknown
 short_cos=unknown
 binext=.
 entry=main.go
-arch=undef
+arch=$(shell go env GOARCH)
 
 ifeq ($(OS),Windows_NT)
 	cos:=windows
@@ -35,5 +35,4 @@ endif
 all: build
 
 build:
-	arch:=$(shell go env GOARCH)
 	$(GO) -buildmode c-shared -o hson_$(short_cos)_$(arch)$(binext) $(entry)
