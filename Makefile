@@ -29,8 +29,7 @@ else
 	endif
 endif
 
-.PHONY:
-	build
+.PHONY: build
 
 all: build
 
