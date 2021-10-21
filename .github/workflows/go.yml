@@ -6,10 +6,6 @@ on:
       - "**/*.go"
     branches:
       - main
-  pull_request:
-  check_run:
-    branches:
-      - main
 
 jobs:    
   pkgtest:
