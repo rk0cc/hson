@@ -9,7 +9,7 @@ as a side project of `will_pub`'s data storage solution
 |Name|Description|Return value|
 |:-:|:-:|:--|
 |`readHSON(path *C.char) *C.Char`|Read HSON file context from the path|Raw JSON string if read data successfully, or empty string if not|
-|`writeHSON(context, path *C.Char) int`|Write HSON context to a file|<ul><li>`0` if write data successfully</li><li>`1` if failed during updating context (can not generate hash or non JSON data applied)</li><li>`2` if failed during writing to file</li></ul>|
+|`writeHSON(context, path *C.Char) C.int`|Write HSON context to a file|<ul><li>`0` if write data successfully</li><li>`1` if failed during updating context (can not generate hash or non JSON data applied)</li><li>`2` if failed during writing to file</li></ul>|
 
 ## Note for macOS users
 
