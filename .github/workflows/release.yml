@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.5
       - name: Get cross compiler for ARM
-        run: sudo apt install gcc-aarch64-linux-gnu -y
+        run: sudo apt-get update && sudo apt-get install gcc-aarch64-linux-gnu -y
       - uses: actions/setup-go@v2.1.4
         with:
           go-version: ">=1.17.2 <1.18.0"
