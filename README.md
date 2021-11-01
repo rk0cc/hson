@@ -13,7 +13,9 @@ as a side project of `will_pub`'s data storage solution
 
 ## Note for macOS users
 
-Please download go 1.17.x, clone this project and run `make build` by yourself. I have no Mac.
+~~Please download go 1.17.x, clone this project and run `make build` by yourself. I have no Mac.~~
+
+Good news! AMD64 based macOS is available now! (You still need to compile by yourself if using Apple Silicon)
 
 ### License
 WTFPL
