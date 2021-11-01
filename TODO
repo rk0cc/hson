@@ -4,8 +4,8 @@ Documentation:
 
 Compile:
     ✔ Built Windows .dll file @done(21-10-19 18:00)
-    ☐ Built macOS .dylib file
-    ☐ Built Linxu .so file
+    ✔ Built macOS .dylib file @started(21-11-01 17:39) @done(21-11-01 17:39) @lasted(36s)
+    ✔ Built Linxu .so file @started(21-11-01 17:39) @done(21-11-01 17:39) @lasted(36s)
 
 Testing:
     ✔ Provide testing file @done(21-10-19 19:02)

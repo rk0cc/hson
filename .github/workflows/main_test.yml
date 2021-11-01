@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "**/*.go"
-      - .github/workflows/go.yml
+      - .github/workflows/main_test.yml
     branches:
       - main
 
@@ -19,6 +19,7 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
+          - macos-latest
       fail-fast: false
     runs-on: ${{ matrix.os }}
     defaults:
