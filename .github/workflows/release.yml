@@ -65,7 +65,7 @@ jobs:
       - name: Upload to artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: hson-${{ matrix.os }}
+          name: hson-${{ matrix.os }}-amd64
           path: bin
           retention-days: 7
   linux-arm64-release:
@@ -89,7 +89,7 @@ jobs:
       - name: Upload to artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: hson-${{ matrix.os }}-arm64
+          name: hson-ubuntu-latest-arm64
           path: bin
           retention-days: 7
   # m1-release:
@@ -108,7 +108,7 @@ jobs:
   #     - name: Upload to artifacts
   #       uses: actions/upload-artifact@v2.2.4
   #       with:
-  #         name: hson-${{ matrix.os }}
+  #         name: hson-macos-arm64
   #         path: bin
   #         retention-days: 7        
 
