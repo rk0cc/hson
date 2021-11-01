@@ -4,6 +4,7 @@ short_cos=unknown
 binext=.
 entry=main.go
 arch=$(shell go env GOARCH)
+BIN=hson_$(short_cos)_$(arch)
 
 ifeq ($(OS),Windows_NT)
 	cos:=windows
@@ -30,9 +31,9 @@ else
 	endif
 endif
 
-.PHONY: build
+.PHONY: all build
 
 all: build
 
 build:
-	$(GO) -buildmode c-shared -o hson_$(short_cos)_$(arch)$(binext) $(entry)
+	$(GO) -buildmode c-shared -o bin/$(BIN)$(binext) $(entry)
