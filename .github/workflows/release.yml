@@ -11,11 +11,40 @@ on:
       - "**.md"
       - ".github/**"
       - "!.github/workflows/release.yml"
+      - "TODO"
+      - "LICENSE"
+      - ".gitignore"
 env:
   CGO_ENABLED: 1
 jobs:
+  pkgtest:
+    name: Package test
+    strategy:
+      matrix:
+        pkgpath:
+          - file
+          - structre
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ${{ matrix.pkgpath }}
+    steps:
+      - uses: actions/checkout@v2.3.5
+      - uses: actions/setup-go@v2.1.4
+        with:
+          go-version: ">=1.17.2 <1.18.0"
+      - name: Get packages
+        run: go mod download
+      - name: Run test
+        run: go test
   release:
     name: Compile HSON (AMD64)
+    needs: pkgtest
     strategy:
       fail-fast: false
       matrix:
@@ -65,6 +94,7 @@ jobs:
           retention-days: 7
   # m1-release:
   #   name: Compile HSON for Apple Silicon (ARM64)
+  #   needs: release
   #   runs-on: macos-11
   #   steps:
   #     - uses: actions/checkout@v2.3.5
