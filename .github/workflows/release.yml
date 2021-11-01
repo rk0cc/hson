@@ -32,13 +32,11 @@ jobs:
         run: go mod download
       - name: Compile to library
         run: make build
-      - name: Archive as zip
-        run: 7z a -tzip hson-${{ matrix.os }}.zip bin/*.*
       - name: Upload to artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
           name: hson-${{ matrix.os }}
-          path: hson-${{ matrix.os }}.zip
+          path: bin
           retention-days: 7
         
 
