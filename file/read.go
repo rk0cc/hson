@@ -23,15 +23,15 @@ func ReadData(path string) (structre.HashJSON, error) {
 	if ofErr != nil {
 		return structre.HashJSON{}, ofErr
 	}
-	defer f.Close()
 	r, rErr := gzip.NewReader(f)
 	if rErr != nil {
 		return structre.HashJSON{}, rErr
 	}
-	defer r.Close()
 	sr, srErr := ioutil.ReadAll(r)
 	if srErr != nil {
 		return structre.HashJSON{}, srErr
 	}
+	r.Close()
+	f.Close()
 	return structre.ParseFromByte(sr)
 }

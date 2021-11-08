@@ -34,10 +34,9 @@ func WriteData(path string, hj *structre.HashJSON) error {
 	if nwErr != nil {
 		return nwErr
 	}
-	defer w.Close()
 	_, wErr := w.Write(hjb)
 	if wErr != nil {
 		return wErr
 	}
-	return nil
+	return w.Close()
 }
