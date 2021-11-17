@@ -9,8 +9,10 @@ as a side project of `will_pub`'s data storage solution
 ## File extension
 
 HSON will generate a binary data file (and yes, it the same structre of JSON) with GZip compressed, the file must be named with this extensions:
+
 * `.hson`
 * `.hashjson`
+
 It returned error if a file does not obey extension naming.
 
 ## API
